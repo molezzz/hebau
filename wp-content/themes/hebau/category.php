@@ -12,11 +12,12 @@ $parent_cate = get_cat_name($cate[0]->category_parent);
   </div>
   <div class="panel cate-list">
     <ul>
-      <?php query_posts('cat='.$cate[0]->cat_ID.'&showposts=8'); ?>
+      <?php query_posts('cat='.$cate[0]->cat_ID.'&paged='.$paged.'&showposts='.$posts_per_page); ?>
       <?php while (have_posts()) : the_post(); ?>
-      <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time">[<?php echo date('Y-m-d');?>]</span></li>
+      <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time"><?php echo date('Y-m-d');?></span></li>
       <?php endwhile; ?>
     </ul>
+    <?php pagination($query_string); ?>
   </div>
   <div class="clearfix"></div>
 </div>

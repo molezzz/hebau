@@ -2,6 +2,14 @@
 <div class="main-layout">
   <div class="main-layout-l f-l">
     <div id="sliderBox">
+    <?php $cid = 5 ?>
+    <?php query_posts('cat='.$cid.'&showposts=5'); ?>
+    <?php while (have_posts()) : the_post(); ?>
+    <a href="<?php the_permalink(); ?>" target='_blank'>
+      <img src=""/>
+      <span><?php the_title(); ?></span>
+    </a>
+    <?php endwhile; ?>
 
     </div><!-- #sliderBox -->
     <div id="quickLinks">

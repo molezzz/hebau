@@ -7,6 +7,7 @@
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/style.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/coin-slider-styles.css">
   <?php //wp_head(); ?>
   <!--[if IE]>
   <style type="text/css">
@@ -22,6 +23,8 @@
     }
   </style>
   <![endif]-->
+  <script src="<?php echo get_template_directory_uri();?>/jquery.js"></script>
+  <script src="<?php echo get_template_directory_uri();?>/coin-slider.min.js"></script>
 </head>
 <body>
 <div id="main">
