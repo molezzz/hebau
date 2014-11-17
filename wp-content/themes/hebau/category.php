@@ -8,7 +8,12 @@ $parent_cate = get_cat_name($cate[0]->category_parent);
 </div>
 <div>
   <div class="quick-bar f-r">
-
+   <ul>
+     <?php
+      wp_list_cats('child_of='.$cate[0]->category_parent.'&depth=0&hide_empty=0');
+      //$cates = get_categories('child_of='.$cate[0]->category_parent.'&depth=0&hide_empty=0');
+      ?>
+   </ul>
   </div>
   <div class="panel cate-list">
     <ul>

@@ -6,7 +6,7 @@
     <?php query_posts('cat='.$cid.'&showposts=5'); ?>
     <?php while (have_posts()) : the_post(); ?>
     <a href="<?php the_permalink(); ?>" target='_blank'>
-      <img src=""/>
+      <img src="<?php echo emtx_auto_thumbnail($post->ID,'large')?>"/>
       <span><?php the_title(); ?></span>
     </a>
     <?php endwhile; ?>
@@ -76,5 +76,13 @@
 <div id="bottomBanner" class="t-c">
   <img src="<?php echo get_template_directory_uri();?>/images/img_bottom.jpg"/>
 </div>
+<script type="text/javascript">
+   $('#sliderBox').coinslider({
+    width: 440,
+    height: 320,
+    delay: 5000,
+    navigation: true
+   });
+</script>
 <?php
 get_footer();

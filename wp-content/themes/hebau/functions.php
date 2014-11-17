@@ -50,3 +50,33 @@ function pagination($query_string){
   echo "</div>\n";
   }
 }
+
+function emtx_auto_thumbnail($pID,$thumb='thumbnail') {
+    $blogimg = FALSE;
+     if (has_post_thumbnail()) {// 判断该文章是否已经设置了“特色图像”，如果有则直接显示该特色图像的缩略图
+        $blogimg = wp_get_attachment_image_src(get_post_thumbnail_id($pID),$thumb);
+        $blogimg = $blogimg[0];
+     // } elseif ($postimages = get_children("post_parent=$pID&post_type=attachment&post_mime_type=image&numberposts=0")) {//如果文章没有设置特色图像，则查找文章内是否有上传图片
+
+     //    foreach($postimages as $postimage) {
+     //      $blogimg = wp_get_attachment_image_src($postimage->ID, $thumb);
+     //      $blogimg = $blogimg[0];
+     //      break; //只取第一张
+     //    }
+     } elseif (preg_match('/<img [^>]*src=["|\']([^"|\']+)/i', get_the_content(), $match) != FALSE) {
+       $blogimg = $match[1];
+     }
+     //if($blogimg) {
+     // $blogimg = '<a href="'. get_permalink().'"><img src="'.$blogimg.'" alt="'.get_the_title().'"  class="alignleft wp-post-image"  /></a>';
+     //}
+    return $blogimg;
+ }
+
+ function get_category_root_id($cat){
+    $this_category = get_category($cat); // 取得当前分类
+    while($this_category->category_parent) // 若当前分类有上级分类时，循环
+    {
+    $this_category = get_category($this_category->category_parent); // 将当前分类设为上级分类（往上爬）
+    }
+    return $this_category->term_id; // 返回根分类的id号
+}
