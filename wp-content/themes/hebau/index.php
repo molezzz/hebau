@@ -21,11 +21,27 @@
         </dd>
         <dt>友情链接</dt>
         <dd>
-          <select>
-            <option value="">选择连接</option>
+          <select class="quick-links">
+            <option value="">相关连接</option>
+            <option value="http://www.zytzb.gov.cn/tzb2010/index.shtml">中共中央统战部</option>
+            <option value="http://www.hbtyzx.org.cn/">河北省委统战部</option>
+            <option value="http://www.minge.gov.cn/">民革中央</option>
+            <option value="http://www.dem-league.org.cn/">民盟中央</option>
+            <option value="http://www.cndca.org.cn/">民建中央</option>
+            <option value="http://www.mj.org.cn/">民进中央</option>
+            <option value="http://www.ngd.org.cn/">农工党中央</option>
+            <option value="http://www.93.gov.cn/">九三学社中央</option>
+            <option value="http://www.gqb.gov.cn/">国务院侨办</option>
+            <option value="http://www.chinaql.org/sites/ql/index.html">中国侨联</option>
           </select>
-          <select>
-            <option value="">选择连接</option>
+          <select class="quick-links">
+            <option value="">友情连接</option>
+            <option value="http://www.zysy.org.cn/portal/index.htm">中央社会主义学院</option>
+            <option value="http://tongzhanbu.hbu.cn/">河北大学统战部</option>
+            <option value="http://202.206.100.3/chu/tzb/index.htm">河北师范大学统战部</option>
+            <option value="http://web.heuet.edu.cn/tzb/">河北经贸大学统战部</option>
+            <option value="http://tongzhan.web.hebust.edu.cn/">河北科技大学统战部</option>
+            <option value="http://tzb.heuu.edu.cn/UI/Default.aspx">河北联合大学统战部</option>
           </select>
         </dd>
       </dl>
@@ -82,6 +98,10 @@
     height: 320,
     delay: 5000,
     navigation: true
+   });
+   $('.quick-links').change(function(){
+    var $this = $(this);
+    window.open($this.val());
    });
 </script>
 <?php
