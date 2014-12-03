@@ -3,9 +3,9 @@
 global $post;
 the_post();
 if($post->post_parent){
-    $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
+    $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0&sort_column=menu_order&sort_order=desc");
 } else {
-    $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+    $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0&sort_column=menu_order&sort_order=desc");
 }
 ?>
 <div class="breadcrumbs">
