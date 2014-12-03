@@ -63,7 +63,7 @@
         <ul>
           <?php query_posts('cat='.$cid.'&showposts=8'); ?>
           <?php while (have_posts()) : the_post(); ?>
-          <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time">[<?php echo date('Y-m-d');?>]</span></li>
+          <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time">[<?php the_time('Y-m-d');?>]</span></li>
           <?php endwhile; ?>
         </ul>
       </dd>
@@ -81,7 +81,7 @@
         <ul>
           <?php query_posts('cat='.$cid.'&showposts=8'); ?>
           <?php while (have_posts()) : the_post(); ?>
-          <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time">[<?php echo date('Y-m-d');?>]</span></li>
+          <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time">[<?php the_time('Y-m-d');?>]</span></li>
           <?php endwhile; ?>
         </ul>
       </dd>

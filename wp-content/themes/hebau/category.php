@@ -23,7 +23,7 @@ if($cate->category_parent > 0){
     <ul>
       <?php query_posts('cat='.$cate->cat_ID.'&paged='.$paged.'&showposts='.$posts_per_page); ?>
       <?php while (have_posts()) : the_post(); ?>
-      <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time"><?php echo date('Y-m-d');?></span></li>
+      <li><a href="<?php the_permalink(); ?>" target='_blank'><?php the_title(); ?></a><span class="time"><?php the_time('Y-m-d');?></span></li>
       <?php endwhile; ?>
     </ul>
     <?php pagination($query_string); ?>
